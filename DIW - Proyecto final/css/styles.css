@@ -1,130 +1,138 @@
-header .user-utils>div>a i {
-    color: black;
-    margin-right: 15px;
-}
-
-header .user-utils #shopping-cart>span {
-    background: blue;
-    color: #fff;
-    border-radius: 14px;
-    width: 13px;
-    height: 13px;
-    position: absolute;
-    margin-left: -15px;
-    padding: 0;
-    line-height: 12px;
-    text-align: center;
-    font-size: 9px;
-    font-weight: bold;
-}
-
-header .user-utils>div>#my-account i {
-    color: black;
-    margin-right: 5px;
-}
-
-header #logo {
-    text-align: center;
-}
-
-
-/* MENÚ */
-
-ul.menu {
-    text-align: center;
-    background: black;
-}
-
-ul.menu>li {
-    display: inline-block;
-    margin: 0px 30px;
-    padding: 10px;
-}
-
-ul.menu>li a {
-    text-decoration: none;
-    color: white;
-}
-
-
-/* CUERPO DE LA PÁGINA */
-
-#main>div {
-    font-size: 40px;
-    color: black;
-    text-align: center;
-}
-
-
-/* PIE DE PÁGINA */
-
-footer {
-    background: black;
-    padding: 14px 0;
-    color: white;
-}
-
-footer:hover {
-    color: green;
-}
-
-footer .footer_links ul {
-    padding: 0;
-}
-
-footer .footer_links ul li {
-    list-style: none;
-}
-
-footer .footer_links ul li a {
-    text-decoration: none;
-}
-
-footer .footer_links ul li a:hover {
-    color: white;
-}
-
-.copyright {
-    text-align: center;
-    background: rgb(152, 152, 153);
-    color: black;
-    padding: 6px;
-    font-size: 8px;
-}
-
-#totop {
-    display: none;
-}
-
-
-/* MOBILE */
-
-@media(max-width: 768px) {
-    /* CABECERA */
-    header .contacto>div>span {
-        display: none;
+    header .user-utils>div>a i {
+        color: black;
+        margin-right: 15px;
     }
-    header .contacto {
-        order: 1;
+    
+    header .user-utils #shopping-cart>span {
+        background: blue;
+        color: #fff;
+        border-radius: 14px;
+        width: 13px;
+        height: 13px;
+        position: absolute;
+        margin-left: -15px;
+        padding: 0;
+        line-height: 12px;
+        text-align: center;
+        font-size: 9px;
+        font-weight: bold;
     }
-    header .user-utils {
-        order: 2;
+    
+    header .user-utils>div>#my-account i {
+        color: black;
+        margin-right: 5px;
     }
+    
     header #logo {
-        order: 3;
-    }
-    /* MENÚ */
-    ul.menu>li {
-        margin: 0px;
-        padding: 5px;
-    }
-    ul.menu>li a {
-        font-size: 14px;
-    }
-    /**/
-    /* PIE DE PÁGINA */
-    footer .footer_links h4,
-    footer .footer_links ul {
         text-align: center;
     }
-}
+    /* MENÚ */
+    
+    ul.menu {
+        text-align: center;
+        background: black;
+    }
+    
+    ul.menu>li {
+        display: inline-block;
+        margin: 0px 30px;
+        padding: 10px;
+    }
+    
+    ul.menu>li a {
+        text-decoration: none;
+        color: white;
+    }
+    /* CUERPO DE LA PÁGINA */
+    
+    #main>.cajon {
+        color: black;
+        text-align: center;
+        border: solid;
+    }
+    
+    .productP {
+        text-align: right;
+    }
+    /* PIE DE PÁGINA */
+    
+    footer {
+        background: black;
+        padding: 14px 0;
+        color: white;
+    }
+    
+    footer .footer_links ul {
+        padding: 0;
+    }
+    
+    footer .footer_links ul li {
+        list-style: none;
+    }
+    
+    footer .footer_links ul li a {
+        text-decoration: none;
+    }
+    
+    footer .footer_links ul li a:hover {
+        color: white;
+    }
+    
+    footer .column h4:hover {
+        color: rgb(152, 152, 153);
+    }
+    
+    .copyright {
+        text-align: center;
+        background: rgb(152, 152, 153);
+        color: black;
+        padding: 6px;
+        font-size: 8px;
+    }
+    
+    #totop {
+        display: none;
+    }
+    /* MOBILE */
+    
+    @media(max-width: 768px) {
+        /* CABECERA */
+        header .contacto>div>span {
+            display: none;
+        }
+        header .contacto {
+            order: 1;
+        }
+        header .user-utils {
+            order: 2;
+        }
+        header #logo {
+            order: 3;
+        }
+        /* MENÚ */
+        ul.menu>li {
+            margin: 0px;
+            padding: 5px;
+        }
+        ul.menu>li a {
+            font-size: 14px;
+        }
+        /**/
+        #main>.cajon {
+            color: black;
+            text-align: center;
+            border: solid;
+        }
+        .product {
+            font-size: 13px;
+        }
+        .productG {
+            font-size: 10px;
+        }
+        /* PIE DE PÁGINA */
+        footer .footer_links h4,
+        footer .footer_links ul {
+            font-size: 10px;
+            text-align: center;
+        }
+    }
