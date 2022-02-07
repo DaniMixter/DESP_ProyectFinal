@@ -1,37 +1,46 @@
 const baseDeDatos = [
     {
         id: 1,
-        nombre: 'Patata',
-        precio: 1,
-        imagen: 'patata.jpg'
+        nombre: 'Google Nest Hub 2º Generación Altavoz Inteligente',
+        precio: 74.90,
+        oferta:60,
+        imagen: './img/NestHub2Generacion.jpg',
+        Description: 'Color: blanco',
     },
     {
-        id: 2,
-        nombre: 'Cebolla',
-        precio: 1.2,
-        imagen: 'cebolla.jpg'
+      id: 2,
+      nombre: 'Google Nest Mini Altavoz Inteligente ',
+      precio: 74.90,
+      imagen: './img/AlexaMini.jpg',
+      Description: 'Color: blanco',
     },
     {
-        id: 3,
-        nombre: 'Calabacin',
-        precio: 2.1,
-        imagen: 'calabacin.jpg'
+      id: 3,
+      nombre: 'Figura Goku',
+      precio: 15,
+      imagen: './img/Goku.jpg',
+      Description: 'Tamaño de alto 25 cm, tamaño mediano.',
     },
     {
-        id: 4,
-        nombre: 'Fresas',
-        precio: 0.6,
-        imagen: 'fresas.jpg'
+      id: 4,
+      nombre: 'Figura Broly',
+      precio: 13,
+      imagen: './img/Broly.jpg',
+      Description: 'Tamaño de alto 15 cm, tamaño pequeño.',
     }
 
 ];
-
-let carrito = [];
 const divisa = '€';
+let carrito = [baseDeDatos];
 const DOMitems = document.querySelector('#items');
 const DOMcarrito = document.querySelector('#carrito');
 const DOMtotal = document.querySelector('#total');
 
+$(selector).attr(atributo,function(index,valor));
+
+function mostrarProductos(){
+
+}
 function renderizarProductos() {
     baseDeDatos.forEach((info) => {
         // Estructura
@@ -57,7 +66,7 @@ function renderizarProductos() {
         miNodoBoton.classList.add('btn', 'btn-primary');
         miNodoBoton.textContent = '+';
         miNodoBoton.setAttribute('marcador', info.id);
-        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito);
+        miNodoBoton.addEventListener('click', anyadirProductoAlCarrito());
         // Insertamos
         miNodoCardBody.appendChild(miNodoImagen);
         miNodoCardBody.appendChild(miNodoTitle);
@@ -78,7 +87,16 @@ function anyadirProductoAlCarrito(evento) {
     renderizarCarrito();
 
 }
-
+function borrarItemCarrito(evento) {
+    // Obtenemos el producto ID que hay en el boton pulsado
+    const id = evento.target.dataset.item;
+    // Borramos todos los productos
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== id;
+    });
+    // volvemos a renderizar
+    renderizarCarrito();
+}
 /**
  * Dibuja todos los productos guardados en el carrito
  */
@@ -109,7 +127,7 @@ function renderizarCarrito() {
         miBoton.textContent = 'X';
         miBoton.style.marginLeft = '1rem';
         miBoton.dataset.item = item;
-        miBoton.addEventListener('click', borrarItemCarrito);
+        miBoton.addEventListener('click', borrarItemCarrito());
         // Mezclamos nodos
         miNodo.appendChild(miBoton);
         DOMcarrito.appendChild(miNodo);
@@ -121,16 +139,7 @@ function renderizarCarrito() {
 /**
  * Evento para borrar un elemento del carrito
  */
-function borrarItemCarrito(evento) {
-    // Obtenemos el producto ID que hay en el boton pulsado
-    const id = evento.target.dataset.item;
-    // Borramos todos los productos
-    carrito = carrito.filter((carritoId) => {
-        return carritoId !== id;
-    });
-    // volvemos a renderizar
-    renderizarCarrito();
-}
+
 
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
