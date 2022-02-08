@@ -62,6 +62,10 @@
         color: white;
     }
     
+    h5 {
+        color: red;
+    }
+    
     footer .footer_links ul {
         padding: 0;
     }
@@ -128,6 +132,9 @@
         }
         .productG {
             font-size: 10px;
+        }
+        table>tbody>tr>td>input {
+            width: 50%;
         }
         /* PIE DE PÁGINA */
         footer .footer_links h4,
