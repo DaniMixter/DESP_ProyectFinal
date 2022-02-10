@@ -63,7 +63,7 @@
     }
     
     h5 {
-        color: red;
+        color: blue;
     }
     
     footer .footer_links ul {
@@ -134,12 +134,26 @@
             font-size: 10px;
         }
         table>tbody>tr>td>input {
-            width: 50%;
+            width: 70%;
         }
         /* PIE DE PÁGINA */
         footer .footer_links h4,
         footer .footer_links ul {
             font-size: 10px;
             text-align: center;
+        }
+        #totop {
+            display: none;
+            position: fixed;
+            right: 40px;
+            bottom: 64px;
+            width: 30px;
+            height: 32px;
+            background: black;
+            z-index: 9999;
+            cursor: pointer;
+            text-align: center;
+            padding-top: 9px;
+            color: white;
         }
     }
