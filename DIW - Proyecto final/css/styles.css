@@ -96,6 +96,17 @@
     
     #totop {
         display: none;
+        position: fixed;
+        right: 40px;
+        bottom: 64px;
+        width: 30px;
+        height: 32px;
+        background: black;
+        z-index: 9999;
+        cursor: pointer;
+        text-align: center;
+        padding-top: 9px;
+        color: white;
     }
     /* MOBILE */
     
@@ -141,19 +152,5 @@
         footer .footer_links ul {
             font-size: 10px;
             text-align: center;
-        }
-        #totop {
-            display: none;
-            position: fixed;
-            right: 40px;
-            bottom: 64px;
-            width: 30px;
-            height: 32px;
-            background: black;
-            z-index: 9999;
-            cursor: pointer;
-            text-align: center;
-            padding-top: 9px;
-            color: white;
         }
     }

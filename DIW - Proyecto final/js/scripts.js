@@ -1,55 +1,51 @@
 $(document).ready(function() {
-    carrito();
-    var precioResta = 0;
-    var precio1 = parseFloat($('.precio').text());
-    var precio2 = parseFloat($('.preci').text());
-    var precio3 = parseFloat($('.PrecioEnvio').text());
-    var precio = (precio1 + precio2 + precio3 - precioResta);
-    compra();
-    eliminarProducto(precioResta, precio3);
+    var row_no;
+    eliminarProducto(row_no);
+    compra(row_no);
+    carrito(row_no);
+
 });
 
-function compra() {
+function compra(row_no) {
+    var objeto = 0;
     var cantidad = 0;
-    $(".precios").each(function() {
-        cantidad += parseFloat($(this).text());
-        dinero(cantidad);
+    var PrecioEnvio = parseFloat($('.PrecioEnvio').text());
+
+    $("table tbody .precios").each(function() {
+
+        objeto += parseFloat($(this).text());
     })
+    dinero(objeto + PrecioEnvio);
+
+    if (row_no == 0) {
+        $('#main').text('No hay ningún producto en el carrito');
+
+    }
 }
 
-function carrito() {
-    var row_no = $('table tbody tr').length;
+function carrito(row_no) {
+    row_no = $('table tbody tr').length;
     document.querySelector('#shopping-cart span').innerHTML = row_no;
-    precioResta = parseFloat($('.precios').text());
-    precioResta = (precio3 + precioResta);
-    dinero(precioResta.toFixed(2));
+    compra(row_no);
 }
-/*function eliminarMoney(row_now){
-    if (row_now = 1) {
-        precioResta = parseFloat($('.precios').text());
-        precioResta = (precio3 + precioResta);
-        dinero(precioResta.toFixed(2));
-    }
-}*/
-function eliminarProducto(precioResta, precio3) {
+
+function eliminarProducto(row_no) { /**/
     $(document).on('click', '.eliminarFila', function() {
         $(this).parent('td').parent('tr').remove();
-        carrito();
+        carrito(row_no);
+        compra(row_no);
     });
 }
 
-function cantidad(precio1, precio2) {
-    var cantidad1 = parseFloat($('.cantidad1').text());
-    var cantidad2 = parseFloat($('.cantidad2').text());
-    var c = precio1 * cantidad1;
-    var precioFinal2 = precio2 * cantidad2;
-
+function dinero(precio) { /*Muestra el precio final x pantalla*/
+    document.querySelector('table tfoot .PrecioF').innerHTML = precio.toFixed(2) + "&euro;";
 }
 
-function dinero(precio) {
-    document.querySelector('table tfoot .PrecioF').innerHTML = precio + "&euro;";
-}
-$(document).scoll(function() {
+
+
+
+
+$(document).scoll(function() { /*Scroll subir pantalla.*/
     if ($(this).scrollTop() > 20) {
         $('#totop').fadeIn(500);
     } else {
