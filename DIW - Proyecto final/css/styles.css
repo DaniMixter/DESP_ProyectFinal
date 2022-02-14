@@ -54,6 +54,12 @@
     .productP {
         text-align: right;
     }
+    table tfoot td .comprar{
+        float: right;
+        background-color: black;
+        color: white;
+        width: 90%;
+    }
     /* PIE DE PÁGINA */
     
     footer {
@@ -95,7 +101,7 @@
     }
     
     #totop {
-        display: none;
+        display: block;
         position: fixed;
         right: 40px;
         bottom: 64px;

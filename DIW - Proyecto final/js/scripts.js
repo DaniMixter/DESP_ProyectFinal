@@ -46,10 +46,10 @@ function dinero(precio) { /*Muestra el precio final x pantalla*/
 
 
 $(document).scoll(function() { /*Scroll subir pantalla.*/
-    if ($(this).scrollTop() > 20) {
-        $('#totop').fadeIn(500);
+    if ($(this).scrollTop() > 30) {
+        $('#totop').fadeIn(200);
     } else {
-        $('#totop').fadeIn(500);
+        $('#totop').fadeIn(200);
     }
 });
 $('#totop').click(function() {
