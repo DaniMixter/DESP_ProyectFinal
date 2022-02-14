@@ -3,7 +3,19 @@ $(document).ready(function() {
     eliminarProducto(row_no);
     compra(row_no);
     carrito(row_no);
+    $(document).scroll(function() {
 
+        if($(this).scrollTop() > 30){          
+          $('#totop').fadeIn(500);
+    
+        }else{          
+          $('#totop').fadeOut(500);
+        }
+      });
+    
+      $('#totop').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, 600);
+      });
 });
 
 function compra(row_no) {
@@ -41,17 +53,3 @@ function dinero(precio) { /*Muestra el precio final x pantalla*/
     document.querySelector('table tfoot .PrecioF').innerHTML = precio.toFixed(2) + "&euro;";
 }
 
-
-
-
-
-$(document).scoll(function() { /*Scroll subir pantalla.*/
-    if ($(this).scrollTop() > 30) {
-        $('#totop').fadeIn(200);
-    } else {
-        $('#totop').fadeIn(200);
-    }
-});
-$('#totop').click(function() {
-    $("html, body").animate({ scrollTop: 0 }, 600)
-})

@@ -101,7 +101,7 @@
     }
     
     #totop {
-        display: block;
+        display: none;
         position: fixed;
         right: 40px;
         bottom: 64px;
